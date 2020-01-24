@@ -142,7 +142,7 @@ export default class FetchExample extends React.Component {
   async getDirections(startLoc, destinationLoc) {
     try {
       let resp = await fetch(
-        `https://maps.googleapis.com/maps/api/directions/json?origin=${startLoc}&destination=${destinationLoc}&mode=transit&alternatives=true&key=AIzaSyADybdmQJO7pd2Z6CWbCW9qeGJoMjzgVgU`,
+        `https://maps.googleapis.com/maps/api/directions/json?origin=${startLoc}&destination=${destinationLoc}&mode=transit&alternatives=true&key=[apikey]`,
       );
       let respJson = await resp.json();
       this.setState({routes: respJson.routes});
