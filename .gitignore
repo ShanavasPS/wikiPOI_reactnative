@@ -97,3 +97,6 @@ node_modules/
 
 # DS_Store files
 .DS_Store
+
+# Google API File
+Config.js

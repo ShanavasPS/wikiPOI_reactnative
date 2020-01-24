@@ -9,8 +9,8 @@ import {
 } from 'react-native';
 import MapView from 'react-native-maps';
 import Polyline from '@mapbox/polyline';
-
 navigator.geolocation = require('@react-native-community/geolocation');
+import {googleapikey} from './Config';
 
 export default class FetchExample extends React.Component {
   constructor(props) {
@@ -142,7 +142,7 @@ export default class FetchExample extends React.Component {
   async getDirections(startLoc, destinationLoc) {
     try {
       let resp = await fetch(
-        `https://maps.googleapis.com/maps/api/directions/json?origin=${startLoc}&destination=${destinationLoc}&mode=transit&alternatives=true&key=[apikey]`,
+        `https://maps.googleapis.com/maps/api/directions/json?origin=${startLoc}&destination=${destinationLoc}&mode=transit&alternatives=true&key=${googleapikey}`,
       );
       let respJson = await resp.json();
       this.setState({routes: respJson.routes});
